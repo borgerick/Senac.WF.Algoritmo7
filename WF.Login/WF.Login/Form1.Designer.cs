@@ -37,6 +37,7 @@
             label1 = new Label();
             label2 = new Label();
             button2 = new Button();
+            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -137,6 +138,7 @@
             // 
             button2.BackColor = Color.Black;
             button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Location = new Point(907, 12);
             button2.Name = "button2";
@@ -146,12 +148,28 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.Black;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(850, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(51, 44);
+            button3.TabIndex = 11;
+            button3.Text = "_";
+            button3.TextAlign = ContentAlignment.TopCenter;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(970, 556);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(textBox2);
             Controls.Add(label2);
@@ -181,5 +199,6 @@
         private Label label1;
         private Label label2;
         private Button button2;
+        private Button button3;
     }
 }

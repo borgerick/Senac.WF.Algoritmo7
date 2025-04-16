@@ -61,11 +61,16 @@ namespace WF.Login
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var resposta = MessageBox.Show("Certeza pequeno gafanhoto?","Sair",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            var resposta = MessageBox.Show("Certeza pequeno gafanhoto?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resposta == DialogResult.Yes)
                 Application.Exit();
 
             Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
