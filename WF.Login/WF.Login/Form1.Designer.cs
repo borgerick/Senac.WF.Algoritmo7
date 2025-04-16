@@ -30,21 +30,20 @@
         {
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
             textBox2 = new TextBox();
             button1 = new Button();
             RecuperarSenha = new LinkLabel();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(128, 128, 255);
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -62,26 +61,30 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.InfoText;
-            textBox1.Location = new Point(492, 191);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(334, 31);
-            textBox1.TabIndex = 1;
-            // 
             // textBox2
             // 
-            textBox2.Location = new Point(492, 252);
+            textBox2.BackColor = Color.Black;
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Calibri", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.ForeColor = Color.FromArgb(255, 128, 0);
+            textBox2.Location = new Point(492, 236);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(334, 31);
+            textBox2.Size = new Size(334, 49);
             textBox2.TabIndex = 2;
+            textBox2.Text = "SENHA";
+            textBox2.TextChanged += textBox2_TextChanged;
+            textBox2.Enter += textBox2_Enter;
+            textBox2.Leave += textBox2_Leave;
             // 
             // button1
             // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Calibri", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Location = new Point(492, 339);
             button1.Name = "button1";
-            button1.Size = new Size(334, 52);
+            button1.Size = new Size(334, 62);
             button1.TabIndex = 3;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = true;
@@ -92,26 +95,56 @@
             RecuperarSenha.Location = new Point(581, 404);
             RecuperarSenha.Name = "RecuperarSenha";
             RecuperarSenha.Size = new Size(161, 25);
-            RecuperarSenha.TabIndex = 4;
+            RecuperarSenha.TabIndex = 0;
             RecuperarSenha.TabStop = true;
             RecuperarSenha.Text = "Esqueceu a Senha?";
             // 
-            // pictureBox2
+            // textBox1
             // 
-            pictureBox2.Location = new Point(852, 12);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(51, 44);
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
+            textBox1.BackColor = Color.Black;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Calibri", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = Color.FromArgb(255, 128, 0);
+            textBox1.Location = new Point(492, 163);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(334, 49);
+            textBox1.TabIndex = 1;
+            textBox1.Text = "USUÁRIO";
+            textBox1.Enter += textBox1_Enter;
+            textBox1.Leave += textBox1_Leave;
             // 
-            // pictureBox3
+            // label1
             // 
-            pictureBox3.Location = new Point(907, 12);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(51, 44);
-            pictureBox3.TabIndex = 6;
-            pictureBox3.TabStop = false;
+            label1.AutoSize = true;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(492, 195);
+            label1.Name = "label1";
+            label1.Size = new Size(292, 25);
+            label1.TabIndex = 8;
+            label1.Text = "________________________________________";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(492, 264);
+            label2.Name = "label2";
+            label2.Size = new Size(292, 25);
+            label2.TabIndex = 9;
+            label2.Text = "________________________________________";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(907, 12);
+            button2.Name = "button2";
+            button2.Size = new Size(51, 44);
+            button2.TabIndex = 10;
+            button2.Text = "X";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
@@ -119,12 +152,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(970, 556);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
+            Controls.Add(button2);
+            Controls.Add(textBox2);
+            Controls.Add(label2);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
             Controls.Add(RecuperarSenha);
             Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
@@ -132,8 +166,6 @@
             Text = "Form1";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,11 +174,12 @@
 
         private Panel panel1;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
         private TextBox textBox2;
         private Button button1;
         private LinkLabel RecuperarSenha;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private TextBox textBox1;
+        private Label label1;
+        private Label label2;
+        private Button button2;
     }
 }

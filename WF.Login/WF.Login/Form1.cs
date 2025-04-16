@@ -16,5 +16,56 @@ namespace WF.Login
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "USUÁRIO")
+                textBox1.Text = string.Empty;
+        }
+
+
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == string.Empty)
+            {
+                textBox1.Text = "USUÁRIO";
+            }
+
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "SENHA")
+                textBox2.Text = string.Empty;
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == string.Empty)
+            {
+                textBox2.Text = "SENHA";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var resposta = MessageBox.Show("Certeza pequeno gafanhoto?","Sair",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (resposta == DialogResult.Yes)
+                Application.Exit();
+
+            Application.Exit();
+        }
     }
 }
